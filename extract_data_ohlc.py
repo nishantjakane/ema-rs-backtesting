@@ -9,7 +9,7 @@ for symbol in df.symbols:
     try:
         data = tv.get_hist(symbol=f'{symbol}',exchange='NSE',interval=Interval.in_weekly,n_bars=312)
         if data is not None and not data.empty:
-            data.to_csv(f"data/{symbol}.csv")
+            data.to_csv(f"data/OHLC/{symbol}.csv")
             print(f"Saved : {symbol}")
         else:
             failed.append(symbol)
